@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class MainApp {
+public class FistSecondTask {
     public static void main(String[] args) {
 
         Object[] a = {1,"Два",3.154,null,5};
@@ -12,25 +12,23 @@ public class MainApp {
         }
 
         System.out.println();
-        convertToArrayList(a);
+        ArrayList b = new ArrayList<>(convertToArrayList(a));
 
 
     }
 
-    public static void swapTwoElements (Object[] arr, int i1, int i2){
-        Object b = arr[i1];
+    public static <T> void swapTwoElements (T[] arr, int i1, int i2){
+        T b = arr[i1];
         arr[i1]=arr[i2];
         arr[i2]=b;
     }
 
-    public static void convertToArrayList (Object[] a){
-        ArrayList<Object> c = new ArrayList<>();
-        for (Object i: a){
+    public static <T> ArrayList convertToArrayList (T[] a){
+        ArrayList<T> c = new ArrayList<>();
+        for (T i: a){
             c.add(i);
         }
-        for (Object i: c){
-            System.out.printf(i + " ");
-        }
+        return c;
     }
 
 }
